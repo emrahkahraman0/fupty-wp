@@ -1,0 +1,164 @@
+/////HEADER
+
+#header {
+  width: 100%;
+  background-color: #111111;
+  @include box-shadow2(0px, 3px, 10px, 0px, rgba(0,0,0,0.36));
+  @include transition(0.4s);
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  //header-wrapper
+  .header-wrapper {
+    @include flex();
+    @include justify-content(space-between);
+    @include align-items(center);
+    height: 60px;
+    position: relative;
+    //logo
+    .logo {
+      position: relative;
+      z-index: 3;
+      img {max-width: 100%}
+    }
+    //menu
+    .menu {
+      >li {
+        display: inline-block;
+        position: relative;
+        margin-right: 15px;
+        &:last-child {
+          margin-right: 0;
+        }
+        >a {
+          color: $base-color;
+          @include weight(semi-bold);
+          text-transform: uppercase;
+          font-family: $family;
+        }
+        ul {
+          width: 200px;
+          position: absolute;
+          top: 39px;
+          left: 0;
+          z-index: 1;
+          background-color: $three-color;
+          opacity: 0;
+          visibility: hidden;
+          @include transition(0.4s);
+          li {
+            display: block;
+            padding: 10px 12px 10px 12px;
+            a {
+              color: $base-color;
+              @include weight(bold);
+              font-size: $size;
+              text-transform: uppercase;
+            }
+          }
+        }
+        &:hover {
+          ul {
+            opacity: 1;
+            visibility: visible;
+          }
+        }
+        .active {
+          position: relative;
+          &::before {
+            position: absolute;
+            width: 0;
+            margin: -5px 0;
+            @include transition(0.4s);
+            content: "";
+            background-color: $secondary-color;
+            height: 4px;
+            border-radius: 2px;
+            left: 0;
+            bottom: 0;
+          }
+        }
+        .active, a.active {
+          &::before {
+            width: 100%;
+          }
+        }
+      }
+    }
+    //hamburger
+    .hamburger {
+      display: none;
+      position: fixed;
+      top: 15px;
+      right: 15px;
+      cursor: pointer;
+      z-index: 999;
+      i {
+        color: $secondary-color;
+        font-size: 30px;
+        cursor: pointer;
+        @include transition(0.4s);
+      }
+    }
+    //Notebook
+    @include notebook {
+      .menu {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: $primary-color;
+        z-index: 2;
+        text-align: center;
+        @include flex();
+        @include flex-direction(column);
+        @include justify-content(center);
+        @include scale(0);
+        opacity: 0;
+        transition: opacity 650ms;
+        li {
+          display: block;
+          margin-right: 0;
+          padding-bottom: 30px;
+          &:last-child {
+            padding-bottom: 0;
+          }
+          a {
+            font-size: 18px;
+            @include weight(bold);
+            color: $base-color;
+            &::before {
+              background-color: $secondary-color;
+            }
+          }
+          ul {
+            width: 100%;
+            top: 30px;
+            li {
+              padding: 7px 0;
+              &:last-child {
+                padding: 7px 0;
+              }
+              a {font-size: 12px; line-height: normal;}
+            }
+          }
+        }
+      }
+      .menu.open {
+        opacity: 1;
+        @include scale(1);
+      }
+      .hamburger {
+        display: block;
+        .fa-times {display: none;}
+        .fa-times.open {display: block;}
+        .fa-bars.open {display: none;}
+      }
+    }
+  }
+}
+
+#header.fixed {
+  background-color: $four-color;
+}

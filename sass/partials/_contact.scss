@@ -1,0 +1,96 @@
+/////CONTACT
+
+//Contact_Banner#
+#contact_banner {
+  width: 100%;
+  @include bg-size(cover);
+  background-position: center;
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+  }
+  img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+  }
+  //text
+  .text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    @include translate(-50%, -50%);
+    text-align: center;
+    font-size: 40px;
+    line-height: normal;
+    letter-spacing: 1px;
+    @include weight(bold);
+    color: $base-color;
+    text-shadow: 2px 2px $primary-color;
+    text-transform: uppercase;
+  }
+  //Notebook
+  @include notebook {
+    .text {font-size: 30px;}
+  }
+  //X-Tablet
+  @include x-tablet {
+    .text {font-size: 25px;}
+  }
+  //Small
+  @include small {
+    .text {font-size: $size;}
+  }
+}
+
+//Our_Contact#
+#our_contact {
+  width: 100%;
+  padding: 60px 0 60px 0;
+  //our_contact
+  .our_contact {
+    //form
+    &_form {
+      input, textarea {
+        width: 100%;
+        border: 1px solid $primary-color;
+        padding: 10px 15px;
+        color: $three-color;
+        background-color: transparent;
+        resize: none;
+        margin-bottom: 15px;
+      }
+    }
+    .wpcf7-submit {
+      width: 100%;
+      background-color: $secondary-color;
+      padding: 10px 0;
+      color: $base-color;
+      font-size: $size;
+      text-transform: uppercase;
+      @include weight(bold);
+      cursor: pointer;
+    }
+    //Notebook
+    @include notebook {
+      &_form {margin-top: 30px}
+    }
+    //Mobil
+    @include mobil {
+      &_form {
+        input, textarea {font-size: 12px; padding: 7px 10px;}
+        .wpcf7-submit {
+          padding: 5px 0;
+          font-size: 12px;
+        }
+      }
+    }
+  }
+}

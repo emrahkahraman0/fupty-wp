@@ -1,0 +1,565 @@
+/////HOME
+
+//Home_Slider#
+#home_slider {
+  width: 100%;
+  //home_slider
+  .home_slider {
+    position: relative;
+    //&_item
+    &_item {
+      position: relative;
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,0.6);
+      }
+      img {width: 100%;}
+      //Notebook
+      @include notebook {
+        img {
+          height: 100vh; object-fit: cover;
+        }
+      }
+    }
+    //owl-dots
+    .owl-dots {
+      position: absolute;
+      bottom: 2%;
+      left: 0;
+      right: 0;
+      .owl-dot {
+        span {
+          width: 25px;
+          height: 7px;
+          background-color: $three-color;
+          @include transition(0.4s);
+        }
+      }
+      .active {
+        span {
+          width: 40px;
+          height: 7px;
+          background-color: $secondary-color;
+          @include transition(0.4s);
+        }
+      }
+    }
+  }
+}
+
+//Home_About#
+#home_about {
+  width: 100%;
+  padding: 80px 0 80px 0;
+  //home_about
+  .home_about {
+    //&_image
+    &_image {
+      img {width: 100%}
+    }
+    //&_text
+    &_text {
+      h6 {
+        color: $secondary-color;
+        text-transform: uppercase;
+        font-size: 25px;
+        line-height: normal;
+        @include weight(bold);
+        letter-spacing: 0.4px;
+      }
+      p {
+        padding-top: 15px;
+        color: $three-color;
+        line-height: 22px;
+      }
+      button {
+        margin-top: 30px;
+        background-color: $secondary-color;
+        padding: 10px 20px 9px 20px;
+        a {
+          color: $base-color;
+          line-height: normal;
+          text-transform: uppercase;
+          @include weight(bold);
+        }
+      }
+    }
+    //Notebook
+    @include notebook {
+      &_text {
+        margin-top: 30px;
+        h6 {font-size: 20px}
+        button {
+          width: 100%;
+          padding: 10px 0 9px 0;
+        }
+      }
+    }
+    //Mobil
+    @include mobil {
+      &_text {
+        h6 {font-size: $size;}
+        p {
+          padding-top: 13px;
+          font-size: 12px;
+          line-height: 20px;
+        }
+        button {
+          margin-top: 20px;
+          a {font-size: 12px}
+        }
+      }
+    }
+  }
+}
+
+//Home_Services#
+#home_services {
+  width: 100%;
+  padding: 80px 0 80px 0;
+  background-color: $four-color;
+  //title
+  .title {
+    display: inline-block;
+    padding: 7px 50px;
+    background-color: $secondary-color;
+    @include weight(bold);
+    line-height: normal;
+    text-transform: uppercase;
+    font-size: 20px;
+    //X-Tablet
+    @include x-tablet {
+      font-size: 16px;
+      padding: 7px 40px 5px 40px;
+    }
+    //Small
+    @include small {
+      font-size: 12px;
+      padding: 5px 20px 4px 20px;
+    }
+  }
+  //home_services
+  .home_services {
+    padding-top: 60px;
+    position: relative;
+    //&_item
+    &_item {
+      img {width: 100%}
+      h6 {
+        padding-top: 20px;
+        line-height: normal;
+        a {
+          text-transform: uppercase;
+          @include weight(bold);
+          font-size: 16px;
+          color: $secondary-color;
+        }
+      }
+      p {
+        padding-top: 12px;
+        color: $three-color;
+        font-size: $size;
+        line-height: 22px;
+        display: -webkit-box;
+        -webkit-line-clamp: 3; /*Kaç Stırda sınırlamak istiyorsanız */
+        -webkit-box-orient: vertical;
+        overflow:hidden;
+      }
+      button {
+        margin-top: 20px;
+        background-color: $secondary-color;
+        padding: 10px 20px;
+        a {
+          color: $four-color;
+          text-transform: uppercase;
+          @include weight(bold);
+        }
+      }
+    }
+    //owl-nav
+    .owl-nav {
+      position: absolute;
+      top: 0;
+      right: 0;
+      .owl-prev, .owl-next {
+        width: 30px;
+        height: 30px;
+        background-color: $secondary-color;
+        color: $primary-color;
+        @include weight(bold);
+      }
+    }
+    //Mobil
+    @include mobil {
+      .owl-nav {
+        top: 3px;
+        .owl-prev, .owl-next {
+          width: 25px;
+          height: 25px;
+        }
+      }
+    }
+    //Mobil
+    @include mobil {
+      padding-top: 50px;
+      &_item {
+        h6 {
+          padding-top: 17px;
+          a {font-size: $size;}
+        }
+        p {
+          font-size: 12px;
+          line-height: 18px;
+        }
+        button {
+          padding: 5px 10px;
+          a {font-size: 12px; line-height: normal}
+        }
+      }
+    }
+  }
+  .all_button {
+    text-align: center;
+    padding-top: 50px;
+    button {
+      background-color: $secondary-color;
+      padding: 10px 40px;
+      a {
+        color: $primary-color;
+        @include weight(bold);
+        line-height: normal;
+        text-transform: uppercase;
+        font-size: $size;
+      }
+    }
+    //Mobil
+    @include mobil {
+      padding-top: 40px;
+      button {
+        padding: 7px 15px 5px 15px;
+        a {
+          font-size: 12px;
+        }
+      }
+    }
+  }
+}
+
+//Home_Projects#
+#home_projects {
+  width: 100%;
+  padding: 80px 0 80px 0;
+  //title
+  .title {
+    display: inline-block;
+    padding: 7px 50px;
+    background-color: $secondary-color;
+    @include weight(bold);
+    line-height: normal;
+    text-transform: uppercase;
+    font-size: 20px;
+    //X-Tablet
+    @include x-tablet {
+      font-size: 16px;
+      padding: 7px 40px 5px 40px;
+    }
+    //Small
+    @include small {
+      font-size: 12px;
+      padding: 5px 20px 4px 20px;
+    }
+  }
+  //home_projects
+  .home_projects {
+    padding-top: 60px;
+    //&_item
+    &_item {
+      img {width: 100%}
+      h6 {
+        padding-top: 25px;
+        line-height: normal;
+        a {
+          text-transform: uppercase;
+          @include weight(bold);
+          font-size: 16px;
+          color: $secondary-color;
+        }
+      }
+      p {
+        padding-top: 12px;
+        color: $three-color;
+        font-size: $size;
+        line-height: 22px;
+        display: -webkit-box;
+        -webkit-line-clamp: 3; /*Kaç Stırda sınırlamak istiyorsanız */
+        -webkit-box-orient: vertical;
+        overflow:hidden;
+      }
+      button {
+        margin-top: 20px;
+        background-color: $secondary-color;
+        padding: 10px 20px;
+        a {
+          color: $four-color;
+          text-transform: uppercase;
+          @include weight(bold);
+        }
+      }
+    }
+    //Mobil
+    @include mobil {
+      padding-top: 50px;
+      &_item {
+        h6 {
+          padding-top: 20px;
+          a {font-size: $size;}
+        }
+        p {
+          padding-top: 10px;
+          font-size: 12px;
+          line-height: 18px;
+        }
+        button {
+          padding: 5px 10px;
+          a {font-size: 12px; line-height: normal}
+        }
+      }
+    }
+    //owl-dots
+    .owl-dots {
+      margin-top: 30px;
+      .owl-dot {
+        span {
+          width: 25px;
+          height: 7px;
+          background-color: $primary-color;
+          @include transition(0.4s);
+        }
+      }
+      .active {
+        span {
+          width: 40px;
+          height: 7px;
+          background-color: $secondary-color;
+          @include transition(0.4s);
+        }
+      }
+    }
+  }
+  .all_button {
+    text-align: center;
+    padding-top: 50px;
+    button {
+      background-color: $secondary-color;
+      padding: 10px 40px;
+      a {
+        color: $primary-color;
+        @include weight(bold);
+        line-height: normal;
+        text-transform: uppercase;
+        font-size: $size;
+      }
+    }
+    //Mobil
+    @include mobil {
+      padding-top: 40px;
+      button {
+        padding: 7px 15px 5px 15px;
+        a {
+          font-size: 12px;
+        }
+      }
+    }
+  }
+}
+
+//Home_Blog#
+#home_blog {
+  width: 100%;
+  padding: 80px 0 80px 0;
+  background-color: $four-color;
+  //title
+  .title {
+    display: inline-block;
+    padding: 7px 50px;
+    background-color: $secondary-color;
+    @include weight(bold);
+    line-height: normal;
+    text-transform: uppercase;
+    font-size: 20px;
+    //X-Tablet
+    @include x-tablet {
+      font-size: 16px;
+      padding: 7px 40px 5px 40px;
+    }
+    //Small
+    @include small {
+      font-size: 12px;
+      padding: 5px 20px 4px 20px;
+    }
+  }
+  //home_blog
+  .home_blog {
+    padding-top: 60px;
+    //&_item
+    &_item {
+      position: relative;
+      img {width: 100%}
+      .category {
+        position: absolute;
+        top: 10px;
+        left: 7px;
+        background-color: $secondary-color;
+        padding: 5px 10px;
+        @include weight(bold);
+        cursor: pointer;
+        a {
+          color: $primary-color;
+          font-size: $size;
+        }
+      }
+      h6 {
+        padding-top: 20px;
+        line-height: normal;
+        a {
+          color: $secondary-color;
+          font-size: 18px;
+          text-transform: uppercase;
+          @include weight(bold);
+        }
+      }
+      .date {
+        padding-top: 10px;
+        color: $three-color;
+        line-height: normal;
+        font-size: $size;
+      }
+      p {
+        padding-top: 15px;
+        line-height: 20px;
+        color: $base-color;
+        letter-spacing: 0.3px;
+        display: -webkit-box;
+        -webkit-line-clamp: 3; /*Kaç Stırda sınırlamak istiyorsanız */
+        -webkit-box-orient: vertical;
+        overflow:hidden;
+      }
+      button {
+        margin-top: 20px;
+        background-color: $secondary-color;
+        padding: 10px 20px;
+        a {
+          color: $four-color;
+          text-transform: uppercase;
+          @include weight(bold);
+        }
+      }
+    }
+    //Mobil
+    @include mobil {
+      padding-top: 50px;
+      &_item {
+        .category {
+          a {font-size: 12px;}
+        }
+        h6 {
+          padding-top: 15px;
+          a {font-size: 12px}
+        }
+        .date {font-size: 12px}
+        p {
+          font-size: 12px;
+          line-height: 18px;
+        }
+        button {
+          padding: 5px 10px;
+          a {font-size: 12px; line-height: normal}
+        }
+      }
+    }
+    //owl-nav
+    .owl-nav {
+      position: absolute;
+      top: 0;
+      right: 0;
+      .owl-prev, .owl-next {
+        width: 30px;
+        height: 30px;
+        background-color: $secondary-color;
+        color: $primary-color;
+        @include weight(bold);
+      }
+    }
+    //Mobil
+    @include mobil {
+      .owl-nav {
+        top: 3px;
+        .owl-prev, .owl-next {
+          width: 25px;
+          height: 25px;
+        }
+      }
+    }
+  }
+  .all_button {
+    text-align: center;
+    padding-top: 50px;
+    button {
+      background-color: $secondary-color;
+      padding: 10px 40px;
+      a {
+        color: $primary-color;
+        @include weight(bold);
+        line-height: normal;
+        text-transform: uppercase;
+        font-size: $size;
+      }
+    }
+    //Mobil
+    @include mobil {
+      padding-top: 40px;
+      button {
+        padding: 7px 15px 5px 15px;
+        a {
+          font-size: 12px;
+        }
+      }
+    }
+  }
+}
+
+//Brands_Logo
+#brands_logo {
+  width: 100%;
+  padding: 50px 0 50px 0;
+  //brands_logo
+  .brands_logo {
+    position: relative;
+    //owl-dots
+    .owl-dots {
+      margin-top: 30px;
+      .owl-dot {
+        span {
+          width: 25px;
+          height: 7px;
+          background-color: $primary-color;
+          @include transition(0.4s);
+        }
+      }
+      .active {
+        span {
+          width: 40px;
+          height: 7px;
+          background-color: $secondary-color;
+          @include transition(0.4s);
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,130 @@
+/////TEAM
+
+//Teams_Banner#
+#teams_banner {
+  width: 100%;
+  @include bg-size(cover);
+  background-position: center;
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+  }
+  img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+  }
+  //text
+  .text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    @include translate(-50%, -50%);
+    text-align: center;
+    font-size: 40px;
+    line-height: normal;
+    letter-spacing: 1px;
+    @include weight(bold);
+    color: $base-color;
+    text-shadow: 2px 2px $primary-color;
+    text-transform: uppercase;
+  }
+  //Notebook
+  @include notebook {
+    .text {font-size: 30px;}
+  }
+  //X-Tablet
+  @include x-tablet {
+    .text {font-size: 25px;}
+  }
+  //Small
+  @include small {
+    .text {font-size: $size;}
+  }
+}
+
+//Our_Teams#
+#our_teams {
+  width: 100%;
+  padding: 80px 0 50px 0;
+  //our_teams
+  .our_teams {
+    //&_item
+    &_item {
+      margin-bottom: 30px;
+      img {width: 100%}
+      h6 {
+        padding-top: 15px;
+        line-height: normal;
+        a {
+          text-transform: uppercase;
+          @include weight(bold);
+          font-size: 16px;
+          color: $secondary-color;
+        }
+      }
+      p {
+        padding-top: 10px;
+        color: $three-color;
+        font-size: $size;
+        line-height: 22px;
+        display: -webkit-box;
+        -webkit-line-clamp: 3; /*Kaç Stırda sınırlamak istiyorsanız */
+        -webkit-box-orient: vertical;
+        overflow:hidden;
+      }
+      button {
+        margin-top: 20px;
+        background-color: $secondary-color;
+        padding: 10px 20px;
+        a {
+          color: $four-color;
+          text-transform: uppercase;
+          @include weight(bold);
+        }
+      }
+    }
+    //Mobil
+    @include mobil {
+      &_item {
+        h6 {
+          padding-top: 18px;
+          a {font-size: $size;}
+        }
+        p {
+          font-size: 12px;
+          line-height: 18px;
+        }
+        button {
+          margin-top: 15px;
+          padding: 5px 10px;
+          a {font-size: 12px; line-height: normal}
+        }
+      }
+    }
+    //Small
+    @include small {
+      &_item {
+        h6 {
+          padding-top: 10px;
+          line-height: 14px;
+          a {font-size: 10px;}
+        }
+        p {
+          padding-top: 7px;
+        }
+        button {
+          padding: 5px 8px 5px 8px;
+          a {font-size: 10px; line-height: normal}
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,34 @@
+/////404
+
+//Error#
+#error {
+  width: 100%;
+  height: 82vh;
+  position: relative;
+  //error_center
+  .error_center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    @include translate(-50%, -50%);
+    text-align: center;
+    h5  {
+      color: $secondary-color;
+      @include weight(bold);
+      font-size: 10vw;
+      letter-spacing: 2px;
+    }
+    h6 {
+      padding-top: 8px;
+      line-height: normal;
+      color: $three-color;
+      font-size: 2vw;
+      @include weight(regular);
+    }
+    //Mobil
+    @include mobil {
+      h5 {font-size: 15vw}
+      h6 {font-size: 4vw}
+    }
+  }
+}

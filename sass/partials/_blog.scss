@@ -1,0 +1,439 @@
+/////BLOG
+
+//Blog_Banner#
+#blog_banner {
+  width: 100%;
+  @include bg-size(cover);
+  background-position: center;
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+  }
+  img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+  }
+  //text
+  .text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    @include translate(-50%, -50%);
+    text-align: center;
+    a {
+      font-size: 40px;
+      line-height: normal;
+      letter-spacing: 1px;
+      @include weight(bold);
+      color: $base-color;
+      text-shadow: 2px 2px $primary-color;
+      text-transform: uppercase;
+    }
+  }
+  //Notebook
+  @include notebook {
+    .text {font-size: 30px;}
+  }
+  //X-Tablet
+  @include x-tablet {
+    .text {font-size: 25px;}
+  }
+  //Small
+  @include small {
+    .text {font-size: $size;}
+  }
+}
+
+//Our_Blog#
+#our_blog {
+  width: 100%;
+  padding: 80px 0 80px 0;
+  //our_blog
+  .our_blog {
+    //&_posts
+    &_posts {
+      //post_article
+      .post_article {
+        position: relative;
+        margin-bottom: 50px;
+        &:last-child {
+          margin-bottom: 0;
+        }
+        img {width: 100%}
+        .category {
+          position: absolute;
+          top: 1%;
+          left: 1%;
+          background-color: $secondary-color;
+          padding: 10px 20px;
+          cursor: pointer;
+          a {
+            color: $primary-color;
+            font-family: $family;
+            font-size: $size;
+            @include weight(bold);
+          }
+        }
+        h5 {
+          padding-top: 20px;
+          line-height: 22px;
+          position: relative;
+          &::before {
+            content: "";
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 25px;
+            height: 3px;
+            background-color: $secondary-color;
+          }
+          a {
+            color: $secondary-color;
+            font-size: 18px;
+            @include weight(bold);
+            text-transform: uppercase;
+            @include transition(0.4s);
+          }
+        }
+        .desc-flex {
+          padding-top: 40px;
+          color: $three-color;
+          @include flex();
+          .icon {
+            @include flex();
+            padding-right: 15px;
+            &:last-child {
+              padding-right: 0;
+            }
+            h6 {
+              padding-left: 10px;
+              a {color: $secondary-color; padding-left: 2px}
+            }
+          }
+        }
+        p {
+          padding-top: 25px;
+          color: $base-color;
+          font-size: $size;
+          line-height: 22px;
+        }
+        button {
+          margin-top: 25px;
+          padding: 10px 20px;
+          background-color: $secondary-color;
+          cursor: pointer;
+          a {
+            color: $primary-color;
+            text-transform: uppercase;
+            font-size: $size;
+            @include weight(bold);
+          }
+        }
+      }
+      //Tablet
+      @include tablet {
+        //post_article
+        .post_article {
+          h5 {
+            line-height: 18px;
+            a {font-size: 15px}
+          }
+        }
+      }
+      //Mobil
+      @include mobil {
+        //post_article
+        .post_article {
+          .category {
+            top: 5px; left: 5px; padding: 5px 10px;
+            a {font-size: 12px;}
+          }
+          h5 {
+            padding-top: 10px;
+            line-height: 14px;
+            a {font-size: 12px}
+          }
+          .desc-flex {
+            padding-top: 35px;
+            @include flex();
+            @include flex-direction(column);
+            .icon {
+              padding-right: 0;
+              padding-bottom: 7px;
+              h6 {padding-left: 5px; font-size: 12px;}
+            }
+          }
+          p {padding-top: 15px; font-size: 12px; line-height: 18px;}
+          button {
+            margin-top: 20px; padding: 5px 10px;
+            a {font-size: 12px;}
+          }
+        }
+      }
+      //Small
+      @include small {
+        //post_article
+        .post_article {
+          .category {
+            top: 2px; left: 1px; padding: 5px 10px 7px 10px;
+            a {font-size: 8px;}
+          }
+          h5 {
+            padding-top: 10px;
+            line-height: 13px;
+            a {font-size: 10px}
+          }
+          .desc-flex {
+            padding-top: 35px;
+            @include flex();
+            @include flex-direction(column);
+            .icon {
+              padding-right: 0;
+              padding-bottom: 7px;
+              h6 {padding-left: 5px; font-size: 10px;}
+            }
+          }
+          p {padding-top: 15px; font-size: 10px; line-height: 16px;}
+          button {
+            margin-top: 20px; padding: 5px 10px 7px 10px;
+            a {font-size: 8px;}
+          }
+        }
+      }
+    }
+    //blog-sidebar
+    &_sidebar {
+      //sidebar_article
+      .sidebar_article {
+        margin-bottom: 50px;
+        &:last-child {
+          margin-bottom: 0;
+        }
+        //search
+        .search {
+          position: relative;
+          input {
+            width: 100%;
+            background-color: transparent;
+            border: 1px solid $three-color;
+            padding: 15px;
+            color: $three-color;
+          }
+          i {
+            position: absolute;
+            top: 20px;
+            right: 15px;
+            color: $three-color;
+          }
+        }
+        //categories
+        .categories {
+          h4 {
+            color: $secondary-color;
+            font-family: $family;
+            font-size: 16px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            @include weight(bold);
+            position: relative;
+            &::before {
+              content: "";
+              position: absolute;
+              bottom: -10px;
+              left: 0;
+              width: 16px;
+              height: 3px;
+              background-color: $secondary-color;
+            }
+          }
+          ul {
+            padding-top: 35px;
+            li {
+              padding-bottom: 10px;
+              &:last-child {
+                padding-bottom: 0;
+              }
+              a {
+                color: $three-color;
+                font-size: $size;
+                text-transform: uppercase;
+                @include weight(semi-bold);
+                @include transition(0.4s);
+                &:hover {
+                  color: $secondary-color;
+                }
+              }
+            }
+          }
+        }
+        //latest-posts
+        .latest-posts {
+          h4 {
+            color: $secondary-color;
+            font-family: $family;
+            font-size: 16px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            @include weight(bold);
+            position: relative;
+            &::before {
+              content: "";
+              position: absolute;
+              bottom: -10px;
+              left: 0;
+              width: 16px;
+              height: 3px;
+              background-color: $secondary-color;
+            }
+          }
+          //latest-post
+          .latest-post {
+            padding-top: 35px;
+            .article-post {
+              padding-bottom: 30px;
+              &:last-child {
+                padding-bottom: 0;
+              }
+              h3 {
+                a {
+                  color: $secondary-color;
+                  font-size: $size;
+                  text-transform: uppercase;
+                  @include weight(semi-bold);
+                  @include transition(0.4s);
+                  &:hover {
+                    color: $four-color;
+                  }
+                }
+              }
+              .article-flex {
+                padding-top: 15px;
+                @include flex();
+                color: $three-color;
+                font-size: 12px;
+                a {
+                  padding-left: 2px;
+                  color: $three-color;
+                  font-size: 12px;
+                  @include weight(bold);
+                }
+                span {padding: 0 7px 0 7px;}
+              }
+              .read-more {
+                padding-top: 18px;
+                @include flex();
+                font-size: 12px;
+                @include align-items(center);
+                color: $base-color;
+                cursor: pointer;
+                h2 {padding-left: 10px;}
+              }
+            }
+          }
+        }
+      }
+      //Notebook
+      @include notebook {
+        margin-top: 50px;
+      }
+      //Mobil
+      @include mobil {
+        .sidebar_article {
+          margin-bottom: 30px;
+          //categories
+          .categories {
+            h4 {font-size: 12px;}
+            ul {
+              li {
+                padding-bottom: 5px;
+                a {font-size: 10px;}
+              }
+            }
+          }
+          //latest-posts
+          .latest-posts {
+            h4 {font-size: 12px;}
+            .latest-post {
+              .article-post {
+                padding-bottom: 20px;
+                h3 {
+                  a {font-size: 12px;}
+                }
+                .article-flex {
+                  @include flex();
+                  @include flex-direction(column);
+                  a {font-size: 10px}
+                  span {display: none;}
+                  .article-category {padding-top: 10px; font-size: 10px;}
+                  .article-date {padding-top: 10px; font-size: 10px;}
+                }
+                .read-more {
+                  h2 {padding-left: 5px;
+                    font-size: 10px;}
+                }
+              }
+            }
+          }
+        }
+      }
+      //X-Small
+      @include x-small {
+        .sidebar_article {
+        }
+      }
+    }
+  }
+  //page
+  .page {
+    width: 250px;
+    margin: 0px auto;
+    text-align: center;
+    padding-top: 50px;
+    .wp-pagenavi{
+      clear: both;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .wp-pagenavi a, .wp-pagenavi span{
+      background: $secondary-color;
+      margin-right: 10px;
+      width: 40px;
+      height: 40px;
+      text-align: center;
+      line-height: 40px;
+      color: #fff;
+      float: left;
+    }
+    .wp-pagenavi a:hover{
+      background: $primary-color;
+      color: #fff;
+    }
+    //Mobil
+    @include mobil {
+      width: 140px;
+      .wp-pagenavi a, .wp-pagenavi span{
+        width: 30px;
+        height: 30px;
+        line-height: 30px;
+      }
+    }
+    //X-Small
+    @include x-small {
+      width: 90px;
+      .wp-pagenavi a, .wp-pagenavi span{
+        width: 25px;
+        height: 25px;
+        line-height: 25px;
+        margin-right: 5px;
+      }
+    }
+  }
+}

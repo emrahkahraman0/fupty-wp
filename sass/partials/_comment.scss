@@ -1,0 +1,135 @@
+/////COMMENTS
+
+//Comment-Form#
+#respond {
+  margin-top: 50px;
+  width: 100%;
+  .comment-reply-title {
+    a {color: $three-color}
+  }
+  .comment-reply-title {
+    color: $three-color;
+    a {
+      color: $secondary-color; padding: 0 2px;
+      font-size: $size;}
+  }
+  //comment-form
+  .comment-form {
+    .comment-notes {font-size: $size; line-height: 20px}
+    .comment-form-comment, .comment-form-author, .comment-form-email, .comment-form-url {
+      textarea, input {
+        width: 100%;
+        padding: 10px;
+        background-color: transparent;
+        border: 1px solid $three-color;
+        resize: none;
+        color: $three-color;
+      }
+    }
+    .comment-form-cookies-consent {font-size: $size}
+    .form-submit {
+      input {
+        width: 100%;
+        padding: 10px 0;
+        background-color: $secondary-color;
+        cursor: pointer;
+        color: $base-color;
+        text-transform: uppercase;
+        @include weight(bold);
+        font-size: $size;
+      }
+    }
+    //Mobil
+    @include mobil {
+      .comment-notes {font-size: 12px; line-height: 18px}
+      .comment-form-cookies-consent {
+        font-size: 12px;
+      }
+      .form-submit {
+        input {
+          font-size: 12px;
+          padding: 7px 3px 5px 3px;
+        }
+      }
+    }
+  }
+}
+
+//Comment#
+#comments {
+  margin-top: 50px;
+  width: 100%;
+  //comments-title
+  .comments-title {font-size: $size; color: $three-color}
+  //comment-list
+  .comment-list {
+    padding-top: 30px;
+    li {
+      padding-bottom: 20px;
+      &:last-child {
+        padding-bottom: 0;
+      }
+      //comment-body
+      .comment-body {
+        width: 100%;
+        p {
+          padding-top: 10px;
+          color: $three-color;
+          font-size: $size;
+        }
+        //comment-author
+        .comment-author {
+          @include flex;
+          @include align-items(center);
+          img {
+            width: 50px; height: 50px;
+            object-fit: cover; @include border-radius(50%);
+          }
+          .fn {
+            padding-left: 10px;
+            a {color: $three-color;}
+          }
+          .says {
+            padding-left: 5px;
+          }
+        }
+        .comment-meta {
+          padding-top: 15px;
+          a {color: $secondary-color;}
+        }
+        .reply {
+          padding-top: 10px;
+          a {
+            color: $three-color;
+            @include weight(bold);
+          }
+        }
+      }
+    }
+    //Small
+    @include small {
+      li {
+        .comment-body {
+          p {font-size: 12px}
+          .comment-author {
+            @include flex;
+            @include flex-direction(column);
+            text-align: center;
+            .fn {padding: 7px 0 0 0; font-size: 12px;}
+            .says {font-size: 12px; padding: 5px 0 0 0}
+          }
+          .comment-meta {
+            text-align: center;
+            a {font-size: 12px}
+          }
+          p {font-size: 12px; text-align: center}
+          .reply {
+            padding-top: 10px;
+            text-align: center;
+            a {font-size: 12px;}
+          }
+        }
+      }
+    }
+  }
+}

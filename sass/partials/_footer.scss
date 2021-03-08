@@ -1,0 +1,81 @@
+/////FOOTER
+
+//Footer#
+#footer {
+  width: 100%;
+  padding: 30px 0 30px 0;
+  background-color: $four-color;
+  //footer
+  .footer {
+    @include flex;
+    @include align-items(center);
+    @include justify-content(space-between);
+    //&_copyright
+    &_copyright {
+      color: $three-color;
+      font-size: $size;
+      line-height: 20px;
+      a {
+        color: $secondary-color; @include weight(bold);
+        padding-left: 5px;
+      }
+    }
+    //&_social
+    &_social {
+      ul {
+        li {
+          display: inline-block;
+          margin-right: 15px;
+          &:last-child {
+            margin-right: 0;
+          }
+          a {
+            color: $primary-color;
+            i {
+              width: 30px;
+              height: 30px;
+              line-height: 30px;
+              text-align: center;
+              background-color: $secondary-color;
+            }
+          }
+        }
+      }
+    }
+    //Notebook
+    @include notebook {
+      @include flex;
+      @include flex-direction(column);
+      text-align: center;
+      &_social {
+        padding-top: 20px;
+      }
+    }
+    //Mobil
+    @include mobil {
+      &_copyright {
+        font-size: 12px;
+      }
+      //&_social
+      &_social {
+        padding-top: 18px;
+        ul {
+          li {
+            margin-right: 10px;
+            &:last-child {
+              margin-right: 0;
+            }
+            a {
+              i {
+                width: 25px;
+                height: 25px;
+                line-height: 25px;
+                font-size: 12px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
