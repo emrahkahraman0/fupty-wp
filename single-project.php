@@ -1,8 +1,12 @@
-<?php get_header(); ?>
+<?php get_header();
+
+$project_href = get_field('project_href');
+
+?>
 
 <div id="projects_detail_banner">
 
-    <img src="<?php bloginfo('template_url'); ?>/img/services-detail-bg.jpg" class="img-fluid" alt="">
+    <img src="<?php bloginfo('template_url'); ?>/img/projects-detail-bg.jpg" class="img-fluid" alt="">
     <div class="text"><?php the_title(); ?></div>
 
 </div>
@@ -25,6 +29,12 @@
             <div class="projects_detail_text col-xl-6 col-lg-6 col-md-12 col-sm-12">
                 <h6><?php the_title(); ?></h6>
                 <p><?php the_content('', ''); ?></p>
+                <div class="button">
+                    <?php if($project_href): ?>
+                    <button><a href="<?php echo $project_href['url']; ?>" target="<?php echo $project_href['target']; ?>">siteye git</a></button>
+                    <?php endif; ?>
+                </div>
+                <!-- button -->
             </div>
             <!-- projects_detail_text -->
 

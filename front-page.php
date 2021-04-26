@@ -1,7 +1,9 @@
 <?php get_header();
-$services_href = get_field('services_href');
-$projects_href = get_field('projects_href');
-$blog_href = get_field('blog_href');
+
+    $services_href = get_field('services_href');
+    $projects_href = get_field('projects_href');
+    $blog_href = get_field('blog_href');
+
 ?>
 
 <div id="home_slider">
@@ -157,7 +159,21 @@ $blog_href = get_field('blog_href');
                 <?php endif; ?>
                 <div class="category"><a href="#"><?php the_category(', ') ?></a></div>
                 <h6><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h6>
-                <div class="date"><?php the_time("F j Y"); ?></div>
+                <div class="desc-flex">
+                    <div class="icon">
+                        <i class="far fa-user"></i>
+                        <h6>by <a href="#"><?php the_author(); ?></a></h6>
+                    </div>
+                    <div class="icon">
+                        <i class="far fa-clock"></i>
+                        <h6><?php the_time("F j Y"); ?> </h6>
+                    </div>
+                    <div class="icon">
+                        <i class="far fa-comment-alt"></i>
+                        <h6><?php comments_number('Yorum Yok', '1 Yorum ', '% Yorum' );?></h6>
+                    </div>
+                </div>
+                <!-- desc-flex -->
                 <p><?php the_excerpt(); ?></p>
                 <button><a href="<?php the_permalink(''); ?>">read more</a></button>
             </div>

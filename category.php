@@ -4,8 +4,8 @@
 
     <div id="blog_banner">
 
-        <img src="<?php bloginfo('template_url'); ?>/img/blog-bg.jpg" class="img-fluid" alt="">
-        <div class="text"><?php the_category(', ') ?></div>
+        <img src="<?php bloginfo('template_url'); ?>/img/category-bg.jpg" class="img-fluid" alt="">
+        <div class="text"><a href="#"><?php the_category(', ') ?></a></div>
 
     </div>
     <!-- blog_banner# -->
@@ -22,7 +22,7 @@
 
                         <div class="post_article">
                             <?php if(has_post_thumbnail()): ?>
-                                <img src="<?php the_post_thumbnail_url('large'); ?>" class="img-fluid">
+                                <img src="<?php the_post_thumbnail_url(); ?>" class="img-fluid">
                             <?php endif; ?>
                             <div class="category"><a href="#"><?php the_category(', ') ?></a></div>
                             <h5><a href="<?php the_permalink(''); ?>"><?php the_title(); ?></a></h5>
@@ -57,11 +57,7 @@
             <!-- blog-wrapper -->
 
             <ul class="page">
-                <li><a href="#">1</a></li>
-                <li><a href="#">2</a></li>
-                <li><a href="#">3</a></li>
-                <li><a href="#">4</a></li>
-                <li><a href="#">5</a></li>
+                <?php sayfalama(); ?>
             </ul>
             <!-- page -->
 

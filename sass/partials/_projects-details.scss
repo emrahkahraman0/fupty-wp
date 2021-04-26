@@ -76,6 +76,31 @@
         font-size: $size;
         line-height: 20px;
       }
+      .button {
+        padding-top: 30px;
+        button {
+          width: 100%;
+          background-color: $secondary-color;
+          padding: 10px 0;
+          a {
+            color: $primary-color;
+            @include weight(bold);
+            line-height: normal;
+            text-transform: uppercase;
+            font-size: $size;
+          }
+        }
+        //Mobil
+        @include mobil {
+          padding-top: 25px;
+          button {
+            padding: 7px 0;
+            a {
+              font-size: 12px;
+            }
+          }
+        }
+      }
     }
     //Notebook
     @include notebook {

@@ -111,10 +111,10 @@
   }
 }
 
-//About_Team#
-#about_team {
+//About_Counters#
+#about_counters {
   width: 100%;
-  padding: 80px 0 50px 0;
+  padding: 80px 0 40px 0;
   background-color: $four-color;
   //title
   .title {
@@ -136,60 +136,55 @@
       padding: 5px 20px 4px 20px;
     }
   }
-  //about_team
-  .about_team {
-    padding-top: 60px;
+  //about_counters
+  .about_counters {
+    padding-top: 50px;
+    //&_item
     &_item {
-      margin-bottom: 30px;
-      img {width: 100%}
-      h6 {
-        padding-top: 20px;
-        line-height: normal;
-        a {
-          color: $secondary-color;
-          font-size: 18px;
-          text-transform: uppercase;
-          @include weight(bold);
-        }
-      }
-      p {
-        padding-top: 10px;
-        line-height: 20px;
+      margin-bottom: 40px;
+      .count {
         color: $base-color;
-        letter-spacing: 0.3px;
-        display: -webkit-box;
-        -webkit-line-clamp: 3; /*Kaç Stırda sınırlamak istiyorsanız */
-        -webkit-box-orient: vertical;
-        overflow:hidden;
-      }
-      button {
-        margin-top: 20px;
-        background-color: $secondary-color;
-        padding: 10px 20px;
-        a {
-          color: $four-color;
-          text-transform: uppercase;
-          @include weight(bold);
+        font-size: 35px;
+        position: relative;
+        &::before {
+          content: "";
+          position: absolute;
+          bottom: -15px;
+          left: 0;
+          width: 100%;
+          height: 3px;
+          background-color: $secondary-color;
         }
+      }
+      .name {
+        padding-top: 30px;
+        color: $three-color;
+        text-transform: uppercase;
+        @include weight(bold);
+        font-size: 16px;
+        line-height: normal;
+        letter-spacing: 0.4px;
       }
     }
-    //Mobil
-    @include mobil {
-      padding-top: 50px;
+  }
+  //Tablet
+  @include tablet {
+    .about_counters {
       &_item {
-        h6 {
-          padding-top: 15px;
-          a {font-size: 12px}
+        .count {font-size: 25px;}
+        .name {font-size: $size;}
+      }
+    }
+  }
+  //Mobil
+  @include mobil {
+    .about_counters {
+      &_item {
+        .count {
+          font-size: 20px;
+          &::before {bottom: -15px;}
         }
-        p {
-          font-size: 12px;
-          line-height: 18px;
-        }
-        button {
-          margin-top: 15px;
-          padding: 5px 10px;
-          a {font-size: 12px; line-height: normal}
-        }
+        .name {padding-top: 30px; font-size: 12px; line-height: 19px;}
       }
     }
   }

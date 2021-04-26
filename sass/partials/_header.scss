@@ -34,26 +34,86 @@
           color: $base-color;
           @include weight(semi-bold);
           text-transform: uppercase;
-          font-family: $family;
+          position: relative;
+          &::before {
+            position: absolute;
+            width: 0;
+            margin: -3px 0;
+            @include transition(0.4s);
+            content: "";
+            background-color: $secondary-color;
+            height: 3px;
+            border-radius: 2px;
+            left: 0;
+            bottom: 0;
+          }
+          &:hover {
+            &::before {
+              width: 100%;
+            }
+          }
         }
         ul {
           width: 200px;
           position: absolute;
-          top: 39px;
+          top: 38px;
           left: 0;
           z-index: 1;
-          background-color: $three-color;
+          padding: 15px 10px;
+          background-color: $secondary-color;
           opacity: 0;
           visibility: hidden;
           @include transition(0.4s);
           li {
             display: block;
-            padding: 10px 12px 10px 12px;
+            padding-bottom: 15px;
+            &:last-child {
+              padding-bottom: 0;
+            }
             a {
               color: $base-color;
               @include weight(bold);
               font-size: $size;
               text-transform: uppercase;
+              position: relative;
+              &::before {
+                position: absolute;
+                width: 0;
+                margin: -3px 0;
+                @include transition(0.4s);
+                content: "";
+                background-color: $base-color;
+                height: 3px;
+                border-radius: 2px;
+                left: 0;
+                bottom: 0;
+              }
+              &:hover {
+                color: $base-color;
+                &::before {
+                  width: 100%;
+                }
+              }
+            }
+            .active {
+              position: relative;
+              &::before {
+                position: absolute;
+                width: 0;
+                margin: -5px 0;
+                @include transition(0.4s);
+                content: "";
+                background-color: $base-color;
+                height: 4px;
+                border-radius: 2px;
+                left: 0;
+                bottom: 0;
+              }
+            }
+            .active, a.active {
+              &::before {
+                width: 100%;
+              }
             }
           }
         }

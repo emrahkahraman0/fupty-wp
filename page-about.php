@@ -41,51 +41,36 @@ get_header(); ?>
 </div>
 <!-- our_about# -->
 
-<div id="about_team">
+<div id="about_counters">
 
     <div class="container">
 
-        <div class="title">about team</div>
+        <div class="title"><?php the_field('counter_heading'); ?></div>
 
-        <div class="about_team row">
+        <?php if( have_rows('counter_item') ): ?>
 
-            <div class="about_team_item col-xl-4 col-lg-4 col-md-6 col-sm-12">
-                <img src="https://via.placeholder.com/350x300" class="img-fluid" alt="">
-                <h6><a href="#">team name</a></h6>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam aliquid amet doloremque dolorum fugit iusto molestiae non suscipit tempore ut Aliquam aliquid amet doloremque dolorum.</p>
-                <button><a href="#">read more</a></button>
+        <div class="about_counters row">
+
+        <?php while( have_rows('counter_item') ): the_row(); ?>
+
+            <div class="about_counters_item col-xl-4 col-lg-4 col-md-6 col-sm-6">
+                <div class="count"><?php echo get_sub_field('counter_count'); ?></div>
+                <div class="name"><?php echo get_sub_field('counter_name'); ?></div>
             </div>
-            <!-- about_team_item -->
-            <div class="about_team_item col-xl-4 col-lg-4 col-md-6 col-sm-12">
-                <img src="https://via.placeholder.com/350x300" class="img-fluid" alt="">
-                <h6><a href="#">team name</a></h6>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam aliquid amet doloremque dolorum fugit iusto molestiae non suscipit tempore ut Aliquam aliquid amet doloremque dolorum.</p>
-                <button><a href="#">read more</a></button>
-            </div>
-            <!-- about_team_item -->
-            <div class="about_team_item col-xl-4 col-lg-4 col-md-6 col-sm-12">
-                <img src="https://via.placeholder.com/350x300" class="img-fluid" alt="">
-                <h6><a href="#">team name</a></h6>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam aliquid amet doloremque dolorum fugit iusto molestiae non suscipit tempore ut Aliquam aliquid amet doloremque dolorum.</p>
-                <button><a href="#">read more</a></button>
-            </div>
-            <!-- about_team_item -->
-            <div class="about_team_item col-xl-4 col-lg-4 col-md-6 col-sm-12">
-                <img src="https://via.placeholder.com/350x300" class="img-fluid" alt="">
-                <h6><a href="#">team name</a></h6>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam aliquid amet doloremque dolorum fugit iusto molestiae non suscipit tempore ut Aliquam aliquid amet doloremque dolorum.</p>
-                <button><a href="#">read more</a></button>
-            </div>
-            <!-- about_team_item -->
+            <!-- about_counters_item -->
+
+        <?php endwhile; ?>
 
         </div>
-        <!-- about_team -->
+        <!-- about_counters -->
+
+        <?php endif; ?>
 
     </div>
     <!-- container -->
 
 </div>
-<!-- about_team -->
+<!-- about_counters# -->
 
 <?php get_template_part( 'templates/brands', 'page' ); ?>
 

@@ -57,8 +57,8 @@
     img {width: 100%}
     .category {
       position: absolute;
-      top: 1%;
-      left: 3%;
+      top: 12px;
+      left: 22px;
       background-color: $secondary-color;
       padding: 10px 20px;
       cursor: pointer;
@@ -119,7 +119,10 @@
   @include mobil {
     //single-article
     .single_article {
-      .category {font-size: 12px; top: 10px; left: 20px; padding: 5px 10px;}
+      .category {
+        top: 5px; left: 20px; padding: 5px 10px;
+        a {font-size: 11px;}
+      }
       h5 {
         padding-top: 10px;
         line-height: 14px;
